@@ -1,0 +1,77 @@
+﻿
+.container {
+    width: 85%;
+}
+
+.activeNavItem, .activeNavItem:hover {
+    background: #337ab7;
+    color: #ffffff !important;
+}
+
+a.list-group-item:hover, button.list-group-item:hover, a.list-group-item:focus, button.list-group-item:focus {
+    background: #337ab7;
+    color: #ffffff;
+    opacity: 0.7;
+}
+
+.panel-heading, .list-group {
+    font-size: 16px;
+}
+
+.panel-body {
+    font-size: 14px;
+}
+
+.summaryList {
+    line-height: 2;
+}
+
+.jumbotron.subhead {
+    padding-bottom: 0px;
+    color: #ffffff;
+    background-color: #6f5499;
+}
+
+.navbar-inverse {
+    background-color: #2BBBAD;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: #FFFFFF;
+    font-size: 17px;
+}
+
+@media only screen and (min-width:0px) and (max-width:1024px) {
+    .container {
+        width: 100%;
+    }
+}
+.right.carousel-control, .left.carousel-control {
+    /*display: none;*/
+    background-image:none;
+    color:#337ab7;
+}
+   
+.projectsContainer {
+    min-height:260px;
+    height:100%;
+    margin-bottom:50px;
+}
+
+.carousel-indicators li {
+    background-color: #FFFFFF; 
+    border: 1px solid #337ab7;
+}
+.carousel-indicators .active{
+    background-color:#337ab7;
+}
+
+.points-item
+{
+    text-align:left;
+     line-height: 2;
+}
+
+body {
+    background-color:#f2f2f2;
+}

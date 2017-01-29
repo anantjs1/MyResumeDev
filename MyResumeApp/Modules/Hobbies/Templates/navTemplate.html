@@ -1,0 +1,10 @@
+﻿<div>
+    <ul class="list-group" style="list-style:none">
+        <li ng-repeat="menuItem in hobbiesDataModel.navigationList" ng-click="sideBarMenuClick(menuItem)">
+            <a class="list-group-item" ng-class="{true:'activeNavItem',false:''}[activeMenuIndex==$index]">
+                {{menuItem.text}}
+                <span class="glyphicon glyphicon-triangle-right pull-right" aria-hidden="true"></span>
+            </a>
+        </li>
+    </ul>
+</div>

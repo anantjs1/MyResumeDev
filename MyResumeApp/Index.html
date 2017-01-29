@@ -1,0 +1,112 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+    <script type="text/javascript" src="Contents/Scripts/Jquery/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="Contents/Scripts/Jquery/jquery-ui-1.12.1.js"></script>
+    <script type="text/javascript" src="Contents/Scripts/Jquery/Plugins/Bootstrap/bootstrap.js"></script>
+    <script type="text/javascript" src="Contents/Scripts/Angular/angular.js"></script>
+    <script type="text/javascript" src="Contents/Scripts/Angular/angular-sanitize.min.js"></script>
+    <script type="text/javascript" src="Contents/Scripts/Angular/angular-route.js"></script>
+    <script type="text/javascript" src="Contents/Scripts/Angular/angular-animate.js"></script>
+    <script type="text/javascript" src="Contents/Scripts/Angular/angular-ui-router.min.js"></script>
+    <!--<script type="text/javascript" src="Contents/Scripts/Angular/angular-ui/ui-bootstrap.js"></script>-->
+    <!--<script type="text/javascript" src="Contents/Scripts/Angular/angular-ui/ui-bootstrap-tpls.js"></script>-->
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.10.0/ui-bootstrap-tpls.min.js"></script>
+
+    <!--HighCharts Plugin-->
+    <script type="text/javascript" src="Contents/Scripts/Jquery/Plugins/Highcharts/highcharts.js"></script>
+    <script type="text/javascript" src="Contents/Scripts/Jquery/Plugins/Highcharts/highcharts-3d.js"></script>
+    <script type="text/javascript" src="Contents/Scripts/Jquery/Plugins/Highcharts/highcharts-more.js"></script>
+    <!--/-->
+
+    <!--Directives-->
+    <script type="text/javascript" src="Directives/highChartDirective.js"></script>
+    <!--/-->
+
+    <link href="Contents/Css/Bootstrap/bootstrap.css" rel="stylesheet" />
+    <!--<link href="Contents/Css/Bootstrap/bootstrap-theme.css" rel="stylesheet" />-->
+    <link href="Contents/Css/app/app.css" rel="stylesheet" />
+    <!--App Related Scripts-->  
+       
+    <!--Configurations-->
+    <script type="text/javascript" src="Configurations/routeConfig.js"></script>
+    <script type="text/javascript" src="Configurations/globalConfig.js"></script>
+    <script type="text/javascript" src="Configurations/globalStrings.js"></script>
+    <!--/-->
+
+    <!--Services-->
+    <!--<script type="text/javascript" src="Services/globalConstants.js"></script>-->
+    <script type="text/javascript" src="Services/globalConstants.js"></script>
+    <script type="text/javascript" src="Modules/MyCareer/Services/myCareerFactory.js"></script>
+    <script type="text/javascript" src="Modules/MyCareer/Services/myCareerDataServices.js"></script>
+    <script type="text/javascript" src="Modules/Hobbies/Services/hobbiesFactory.js"></script>
+    <script type="text/javascript" src="Modules/Hobbies/Services/hobbiesDataServices.js"></script>
+    <script type="text/javascript" src="Modules/Home/Services/personalDetailsFactory.js"></script>
+    <script type="text/javascript" src="Modules/Home/Services/personalDetailsDataServices.js"></script>
+    <!--/-->
+
+    <!--Services-->
+    <script type="text/javascript" src="Filters/myResumeAppFilters.js"></script>
+    <!--/-->
+
+    <!--Controllers-->
+    <script type="text/javascript" src="myResumeAppController.js"></script>
+    <script type="text/javascript" src="Modules/Home/Controllers/homeController.js"></script>
+    <script type="text/javascript" src="Modules/MyCareer/Controllers/myCareerController.js"></script>
+    <script type="text/javascript" src="Modules/Hobbies/Controllers/hobbiesController.js"></script>
+    <script type="text/javascript" src="Modules/Achievements/Controllers/achievementsController.js"></script>
+    <!--/-->
+
+    <!--Modules-->
+    <script type="text/javascript" src="Modules/Home/home.js"></script>
+    <script type="text/javascript" src="Modules/MyCareer/myCareer.js"></script>
+    <script type="text/javascript" src="Modules/Hobbies/hobbies.js"></script>
+    <script type="text/javascript" src="Modules/Achievements/achievements.js"></script>
+    <script type="text/javascript" src="myResumeApp.js"></script>
+    <!--/-->
+
+    <!--/-->
+</head>
+<body>
+    <div ng-app="myResumeApp" ng-controller="myResumeAppController" >
+        <div class="row">
+            <div class="navbar-header mainHeader">
+                <span class="navbar-brand">
+                    Prashat Resume
+                </span>
+            </div>
+            <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
+                <div class="navbar-inner">
+                    <div class="container" ng-model="headerNavText">
+                        <ul class="nav navbar-nav" style="">
+                            <li ng-click="headerNavText='Personal Details'">
+                                <a ui-sref="home">{{"Home" | getStringValue}}</a>
+                            </li>
+                            <li ng-click="headerNavText='Career'">
+                                <a ui-sref="myCareer">{{"My Career" | getStringValue}}</a>
+                            </li>
+                            <li ng-click="headerNavText='Hobbies'">
+                                <a ui-sref="hobbies">{{"Hobbies" | getStringValue}}</a>
+                            </li>
+                            <li ng-click="headerNavText='Achievements'">
+                                <a ui-sref="achievements">{{"Achievements" | getStringValue}}</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+            <header class="jumbotron subhead" id="overview" ng-if="headerNavText!='Personal Details'">
+                <div class="container" ng-hide="headerNavText==''">
+                    <h1>{{headerNavText}}</h1>
+                    <p class="lead">Overview of my {{headerNavText}}</p>
+
+                </div>
+            </header>
+        </div>
+        <div class="container">
+            <div ui-view></div>
+        </div>
+    </div>
+</body>
+</html>

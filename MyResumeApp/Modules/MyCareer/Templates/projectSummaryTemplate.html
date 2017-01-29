@@ -1,0 +1,25 @@
+﻿<div class="panel panel-primary row">
+    <div class="panel-heading">{{"Project Summary" | getStringValue }}</div>
+    <div>
+        <carousel interval="3000">
+            <slide ng-repeat="slide in myCareerDataModel.projectSummaryList">
+                <div class="projectsContainer">
+                    <table class="table table-hover table-inverse table-bordered">
+                        <tr ng-repeat="(key,value) in slide">
+                            <td class="points-item" style="vertical-align:top;"><strong>{{key | getStringValue}}</strong></td>
+                            <td ng-if="key!='RolesResponsibilities'" class="points-item">{{value}}</td>
+                            <td ng-if="key=='RolesResponsibilities'" class="points-item">
+                                <ul>
+                                    <li ng-repeat="point in value" class="points-item">
+                                        <span>{{point}}</span>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    </table>
+
+                </div>
+            </slide>
+        </carousel>
+    </div>
+</div>
