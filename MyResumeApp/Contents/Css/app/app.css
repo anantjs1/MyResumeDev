@@ -75,3 +75,7 @@ a.list-group-item:hover, button.list-group-item:hover, a.list-group-item:focus, 
 body {
     background-color:#f2f2f2;
 }
+
+.panel-primary.separation {
+    margin-top:30px;
+}

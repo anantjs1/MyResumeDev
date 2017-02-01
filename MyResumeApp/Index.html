@@ -19,7 +19,6 @@
     <script type="text/javascript" src="Contents/Scripts/Jquery/Plugins/Highcharts/highcharts-3d.js"></script>
     <script type="text/javascript" src="Contents/Scripts/Jquery/Plugins/Highcharts/highcharts-more.js"></script>
     <!--/-->
-
     <!--Directives-->
     <script type="text/javascript" src="Directives/highChartDirective.js"></script>
     <!--/-->
@@ -27,14 +26,12 @@
     <link href="Contents/Css/Bootstrap/bootstrap.css" rel="stylesheet" />
     <!--<link href="Contents/Css/Bootstrap/bootstrap-theme.css" rel="stylesheet" />-->
     <link href="Contents/Css/app/app.css" rel="stylesheet" />
-    <!--App Related Scripts-->  
-       
+    <!--App Related Scripts-->
     <!--Configurations-->
     <script type="text/javascript" src="Configurations/routeConfig.js"></script>
     <script type="text/javascript" src="Configurations/globalConfig.js"></script>
     <script type="text/javascript" src="Configurations/globalStrings.js"></script>
     <!--/-->
-
     <!--Services-->
     <!--<script type="text/javascript" src="Services/globalConstants.js"></script>-->
     <script type="text/javascript" src="Services/globalConstants.js"></script>
@@ -45,11 +42,9 @@
     <script type="text/javascript" src="Modules/Home/Services/personalDetailsFactory.js"></script>
     <script type="text/javascript" src="Modules/Home/Services/personalDetailsDataServices.js"></script>
     <!--/-->
-
     <!--Services-->
     <script type="text/javascript" src="Filters/myResumeAppFilters.js"></script>
     <!--/-->
-
     <!--Controllers-->
     <script type="text/javascript" src="myResumeAppController.js"></script>
     <script type="text/javascript" src="Modules/Home/Controllers/homeController.js"></script>
@@ -57,7 +52,6 @@
     <script type="text/javascript" src="Modules/Hobbies/Controllers/hobbiesController.js"></script>
     <script type="text/javascript" src="Modules/Achievements/Controllers/achievementsController.js"></script>
     <!--/-->
-
     <!--Modules-->
     <script type="text/javascript" src="Modules/Home/home.js"></script>
     <script type="text/javascript" src="Modules/MyCareer/myCareer.js"></script>
@@ -65,11 +59,10 @@
     <script type="text/javascript" src="Modules/Achievements/achievements.js"></script>
     <script type="text/javascript" src="myResumeApp.js"></script>
     <!--/-->
-
     <!--/-->
 </head>
 <body>
-    <div ng-app="myResumeApp" ng-controller="myResumeAppController" >
+    <div ng-app="myResumeApp" ng-controller="myResumeAppController">
         <div class="row">
             <div class="navbar-header mainHeader">
                 <span class="navbar-brand">
@@ -78,19 +71,25 @@
             </div>
             <nav class="navbar navbar-inverse navbar-fixed-top " role="navigation">
                 <div class="navbar-inner">
-                    <div class="container" ng-model="headerNavText">
+                    <div class="container">
                         <ul class="nav navbar-nav" style="">
-                            <li ng-click="headerNavText='Personal Details'">
+                            <li ng-click="mainMenuClick('Personal Details',0)" ng-class="{'active':mainMenuIndex==0}">
                                 <a ui-sref="home">{{"Home" | getStringValue}}</a>
                             </li>
-                            <li ng-click="headerNavText='Career'">
-                                <a ui-sref="myCareer">{{"My Career" | getStringValue}}</a>
+                            <li ng-click="mainMenuClick('Career',1)" ng-class="{'active':mainMenuIndex==1}">
+                                <a ui-sref=" mycareer">
+                                    {{"My Career" | getStringValue}}
+                                </a>
                             </li>
-                            <li ng-click="headerNavText='Hobbies'">
-                                <a ui-sref="hobbies">{{"Hobbies" | getStringValue}}</a>
+                            <li ng-click="mainMenuClick('Hobbies',2)" ng-class="{'active':mainMenuIndex==2}">
+                                <a ui-sref=" hobbies">
+                                    {{"Hobbies" | getStringValue}}
+                                </a>
                             </li>
-                            <li ng-click="headerNavText='Achievements'">
-                                <a ui-sref="achievements">{{"Achievements" | getStringValue}}</a>
+                            <li ng-click="mainMenuClick('Achievements',3)" ng-class="{'active':mainMenuIndex==3}">
+                                <a ui-sref=" achievements">
+                                    {{"Achievements" | getStringValue}}
+                                </a>
                             </li>
                         </ul>
                     </div>
